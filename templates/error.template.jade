@@ -1,0 +1,4 @@
+.login-validation-summary-errors(ng-if="errorCtrl.service.getErrors().length > 0 || errorCtrl.service.getWarning()")
+    .validation-summary-errors
+        alert(ng-repeat="alert in errorCtrl.service.getErrors()", type="danger", close="errorCtrl.service.clearError(alert)", class="alert alert-danger") {{ alert.Message }}
+        alert(ng-if="errorCtrl.service.getWarning()", type="warning", close="errorCtrl.service.clearWarning()", class="alert alert-warning", ng-bind="errorCtrl.service.getWarning()")
